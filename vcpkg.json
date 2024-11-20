@@ -4,6 +4,7 @@
     { "name": "boost-asio", "features": ["ssl"] },
     "boost-beast",
     "abseil",
-    "simdjson"
+    "simdjson",
+    "benchmark"
   ]
 }
