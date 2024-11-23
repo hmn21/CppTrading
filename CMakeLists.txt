@@ -10,5 +10,5 @@ else()
   set(CMAKE_CXX_FLAGS "-march=x86-64-v3 -flto")
 endif()
 
-
+add_subdirectory(lib)
 add_subdirectory(app)
