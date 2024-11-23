@@ -3,6 +3,7 @@
 #include "absl/random/random.h"
 #include "absl/container/node_hash_map.h"
 #include "absl/container/flat_hash_map.h"
+#include "absl/container/btree_map.h"
 
 #include <list>
 #include <map>
@@ -66,6 +67,8 @@ void BM_LookupSpeed(benchmark::State& state) {
 BENCHMARK_TEMPLATE(BM_LookupSpeed, std::list<std::pair<uint32_t, uint32_t>>)
 ->Range(1, benchmark::CPUInfo::Get().caches.back().size / 100);
 BENCHMARK_TEMPLATE(BM_LookupSpeed, std::map<uint32_t, uint32_t>)
+->Range(1, benchmark::CPUInfo::Get().caches.back().size);
+BENCHMARK_TEMPLATE(BM_LookupSpeed, absl::btree_map<uint32_t, uint32_t>)
 ->Range(1, benchmark::CPUInfo::Get().caches.back().size);
 BENCHMARK_TEMPLATE(BM_LookupSpeed, absl::node_hash_map<uint32_t, uint32_t>)
 ->Range(1, benchmark::CPUInfo::Get().caches.back().size);

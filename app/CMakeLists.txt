@@ -9,4 +9,8 @@ add_executable(CacheBench cachebench.cpp)
 target_link_libraries(CacheBench PRIVATE benchmark::benchmark)
 
 add_executable(ContainerBench containerbench.cpp)
-target_link_libraries(ContainerBench PRIVATE absl::absl_check absl::random_random absl::flat_hash_map absl::node_hash_map benchmark::benchmark)
+target_link_libraries(ContainerBench PRIVATE absl::absl_check absl::random_random absl::btree absl::flat_hash_map absl::node_hash_map benchmark::benchmark)
+
+add_executable(SPSCBench spscbench.cpp)
+target_include_directories(SPSCBench PRIVATE ../lib/container)
+target_link_libraries(SPSCBench PRIVATE benchmark::benchmark)

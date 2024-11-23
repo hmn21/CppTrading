@@ -7,7 +7,7 @@ project(CppTrading)
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
   set(CMAKE_CXX_FLAGS "-Wall -Wextra -Wpedantic")
 else()
-  set(CMAKE_CXX_FLAGS "-march=x86-64-v3 -flto")
+  set(CMAKE_CXX_FLAGS "-O3 -march=x86-64-v3 -flto")
 endif()
 
 add_subdirectory(lib)
